@@ -28,7 +28,7 @@ public class Robot extends TimedRobot {
   
   private final PWMVictorSPX m_leftMotor = new PWMVictorSP(0);
   private final PWMVictorSPX m_rightMotor = new PWMVictorSP(1);
-  private final DifferentialDrive m_robotDrive = new DifferentialDrive(m_leftMotor, m_rightMotor);
+  private final DifferentialDrive m_robotDrive = new DifferentialDrive(leftControllerGroup, rightControllerGroup);
   private final Joystick m_stick = new Joystick(0);
 
   @Override
