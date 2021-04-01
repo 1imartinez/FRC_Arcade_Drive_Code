@@ -8,17 +8,26 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.PWMVictorSPX;
+import edu.wpi.first.wpilibj.PWMVictorSP;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+import edu.wpi.frist.wpilibj.SpeedControllerGroup;
 
 /**
  * This is a demo program showing the use of the DifferentialDrive class.
  * Runs the motors with arcade steering.
  */
 public class Robot extends TimedRobot {
-  private final PWMVictorSPX m_leftMotor = new PWMVictorSPX(0);
-  private final PWMVictorSPX m_rightMotor = new PWMVictorSPX(1);
+  
+  
+  
+  
+  
+  private final SpeedControllerGroup leftControllerGroup = new SpeedControllerGroup(new PWMVictorSP(0), new PWMVictorSP(1));
+  private final SpeedControllerGroup rightControllerGroup = new SpeedControllerGroup(new PWMVictorSP(2), new PWMVictorSP(3));
+  
+  private final PWMVictorSPX m_leftMotor = new PWMVictorSP(0);
+  private final PWMVictorSPX m_rightMotor = new PWMVictorSP(1);
   private final DifferentialDrive m_robotDrive = new DifferentialDrive(m_leftMotor, m_rightMotor);
   private final Joystick m_stick = new Joystick(0);
 
